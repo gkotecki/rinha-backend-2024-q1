@@ -1,0 +1,16 @@
+{
+  "name": "rinha-backend-2024-q1",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "bun --hot src/server.ts",
+    "start": "bun run src/server.ts",
+    "start-smol": "bun --smol run src/server.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
