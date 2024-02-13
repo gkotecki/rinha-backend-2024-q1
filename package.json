@@ -3,7 +3,7 @@
   "module": "index.ts",
   "type": "module",
   "scripts": {
-    "dev": "bun --hot src/server.ts",
+    "dev": "bun --watch src/server.ts",
     "start": "bun run src/server.ts",
     "start-smol": "bun --smol run src/server.ts"
   },

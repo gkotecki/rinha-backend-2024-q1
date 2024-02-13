@@ -1,5 +1,6 @@
 .DS_Store
 .env
+*.sqlite
 
 node_modules/
 coverage
