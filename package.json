@@ -1,19 +1,19 @@
 {
-  "name": "rinha-backend-2024-q1",
-  "module": "index.ts",
-  "type": "module",
-  "scripts": {
-    "dev": "bun --watch src/server.ts",
-    "start": "bun run src/server.ts",
-    "start-smol": "bun --smol run src/server.ts",
-    "lint": "biome check *",
-    "load-test": "load-test/run.sh"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "1.5.3",
-    "@types/bun": "latest"
-  },
-  "peerDependencies": {
-    "typescript": "^5.0.0"
-  }
+    "name": "rinha-backend-2024-q1",
+    "module": "index.ts",
+    "type": "module",
+    "scripts": {
+        "dev": "bun --watch src/server.ts",
+        "start": "bun run src/server.ts",
+        "start-smol": "bun --smol run src/server.ts",
+        "lint": "biome check *",
+        "load-test": "load-test/run.sh"
+    },
+    "devDependencies": {
+        "@biomejs/biome": "1.5.3",
+        "@types/bun": "latest"
+    },
+    "peerDependencies": {
+        "typescript": "^5.0.0"
+    }
 }
