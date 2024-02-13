@@ -49,7 +49,7 @@ type Transaction = {
 }
 
 Bun.serve({
-  port: 3000,
+  port: 9999,
   fetch(req) {
     const url = new URL(req.url)
 

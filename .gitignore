@@ -7,3 +7,5 @@ coverage
 dist
 logs
 out
+
+load-test/user-files/results/*
