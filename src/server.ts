@@ -1,4 +1,5 @@
 import { Database } from 'bun:sqlite'
+
 const db = new Database('rinha.sqlite', { create: true })
 
 db.run(`

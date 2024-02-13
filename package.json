@@ -5,9 +5,11 @@
   "scripts": {
     "dev": "bun --watch src/server.ts",
     "start": "bun run src/server.ts",
-    "start-smol": "bun --smol run src/server.ts"
+    "start-smol": "bun --smol run src/server.ts",
+    "lint": "biome check *"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.5.3",
     "@types/bun": "latest"
   },
   "peerDependencies": {
