@@ -48,9 +48,15 @@ type Transaction = {
     realizada_em: string
 }
 
+type TransactionPayload = {
+    valor: number
+    tipo: 'c' | 'd'
+    descricao: string
+}
+
 Bun.serve({
     port: 9999,
-    fetch(req) {
+    async fetch(req) {
         const url = new URL(req.url)
 
         if (url.pathname === '/') {
@@ -62,9 +68,9 @@ Bun.serve({
         }
 
         const frags = url.pathname.split('/')
+        const id = frags.at(-2) || '0'
 
         if (frags.at(-1) === 'extrato') {
-            const id = frags.at(-2) || '0'
             const customer = db.query('SELECT * FROM clientes WHERE id = ?').get(id) as Customer
             if (!customer) {
                 return new Response('{}', {
@@ -92,8 +98,13 @@ Bun.serve({
         }
 
         if (frags.at(-1) === 'transacoes') {
-            const id = frags.at(-2)
-            const data = JSON.stringify({ message: 'Hello, transacoes!', id })
+            const body = (await req.json()) as TransactionPayload
+            console.log(body)
+            const customer = db.query('SELECT * FROM clientes WHERE id = ?').get(id) as Customer
+            const data = JSON.stringify({
+                limite: 100000,
+                saldo: -9098,
+            })
             return new Response(data, {
                 status: 200,
                 headers: { 'Content-Type': 'application/json' },
